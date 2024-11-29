@@ -53,7 +53,7 @@ export default function FilterMenu({
         className={classes.main}
         style={{
           width: `${typeOfScreen == 3 ? "34%" : typeOfScreen == 2 ? "48%" : "87%"}`,
-          height: `${states.artistsSelectOpen && states.locationsSelectOpen ? "calc(100% + 100px)" : "100%"}`,
+          height: `${states.artistsSelectOpen && states.locationsSelectOpen ? "calc(100% + 300px)" : "100%"}`,
         }}
       >
         <div
