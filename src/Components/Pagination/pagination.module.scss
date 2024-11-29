@@ -1,0 +1,64 @@
+.wrapper {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  .pagination {
+    padding: 0;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    li {
+      list-style-type: none;
+      display: inline;
+      padding: 4px;
+      width: 24px;
+      height: 24px;
+      button {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        border: 0;
+        background: none;
+        width: 24px;
+        height: 24px;
+        color: var(--pagination-font);
+        //styleName: Paragraph big/light 16;
+        //styleName: Paragraph big/light 16;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22.4px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        svg {
+          path {
+            fill: var(--pagination-font);
+          }
+        }
+      }
+      .current {
+        background-color: var(--pagination);
+        border-radius: 4px;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22.4px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .nums:hover {
+        cursor: pointer;
+        border-bottom: 1px solid var(--underline);
+        font-weight: 700;
+      }
+    }
+  }
+}
+.dots {
+  border: 0;
+  background: none;
+  color: var(--primary-another);
+}

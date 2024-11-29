@@ -1,0 +1,73 @@
+body {
+  overflow-x: hidden;
+}
+html[theme="light"] {
+  background-color: #ffffff;
+  --primary: #ffffff;
+  --primary-another: #121212;
+
+  --primary-light-grey: #dedede;
+  --primary-dark-grey: #575757;
+
+  --secondary: #fcfcfc;
+
+  --secondary-grey: #9c9c9c;
+
+  --accent: #9b4b4b;
+
+  --pagination: #1212120d;
+  --pagination-font: #575757;
+
+  --underline: #9c9c9c;
+
+  --border-inp-focus: #575757;
+  --border-inp: #dedede;
+
+  --loop: #575757;
+
+  --btn-back: #1212120d;
+
+  --list: #dedede;
+
+  --scroll: #575757;
+}
+html[theme="dark"] {
+  background-color: #121212;
+  --primary: #121212;
+  --primary-another: #ffffff;
+
+  --primary-light-grey: #dedede;
+  --primary-dark-grey: #575757;
+
+  --secondary: #1a1818;
+
+  --accent: #ab8956;
+
+  --pagination: #1a1818;
+  --pagination-font: #dedede;
+
+  --underline: #575757;
+  --border-inp-focus: #dedede;
+  --border-inp: none;
+  --loop: #dedede;
+
+  --btn-back: #1a1818;
+
+  --list: #575757;
+
+  --scroll: #dedede;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scroll);
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+input {
+  text-overflow: ellipsis;
+}

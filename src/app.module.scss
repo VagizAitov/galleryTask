@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+}
+.background {
+  background-color: var(--primary);
+  overflow-x: hidden;
+  width: 100vw;
+}
+.notFound {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .header {
+    color: var(--pagination-font);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .second {
+    color: var(--primary-dark-grey);
+    //styleName: Paragraph base/light 14;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+}

@@ -1,0 +1,377 @@
+.disp {
+  transition: 0.2s;
+  overflow: scroll;
+  .main {
+    transition: 0.2s;
+    background-color: var(--primary);
+    height: 100%;
+    .wrapper {
+      transition: 0.2s;
+      .esc {
+        transition: 0.2s;
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        button {
+          display: flex;
+          justify-content: center;
+          justify-items: center;
+          background: 0;
+          border: 0;
+          width: 20px;
+          height: 20px;
+          svg {
+            min-width: 24px;
+            path {
+              fill: var(--primary-another);
+            }
+          }
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
+      .filter {
+        .open {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          svg {
+            min-width: 20px;
+            path {
+              fill: var(--primary-another);
+            }
+          }
+          p {
+            color: var(--primary-another);
+            font-family: Cormorant SC;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.38px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+          }
+        }
+        .open:hover {
+          cursor: pointer;
+        }
+
+        display: flex;
+        flex-direction: column;
+      }
+      gap: 100px;
+      display: flex;
+
+      width: 70%;
+      flex-direction: column;
+    }
+  }
+  position: fixed;
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+.notDisp {
+  transition: 0.2s;
+  overflow: scroll;
+  .main {
+    transition: 0.2s;
+    background-color: var(--primary);
+    height: 100%;
+    .wrapper {
+      transition: 0.2s;
+      .esc {
+        transition: 0.2s;
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        button {
+          display: flex;
+          justify-content: center;
+          justify-items: center;
+          background: 0;
+          border: 0;
+          width: 20px;
+          height: 20px;
+          svg {
+            min-width: 24px;
+            path {
+              fill: var(--primary-another);
+            }
+          }
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
+      .filter {
+        .open {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          svg {
+            min-width: 20px;
+            path {
+              fill: var(--primary-another);
+            }
+          }
+          p {
+            color: var(--primary-another);
+            font-family: Cormorant SC;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.38px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+          }
+        }
+        .open:hover {
+          cursor: pointer;
+        }
+
+        display: flex;
+        flex-direction: column;
+      }
+      gap: 100px;
+      display: flex;
+
+      width: 70%;
+      flex-direction: column;
+    }
+  }
+  position: fixed;
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  margin-left: 100%;
+}
+
+.artistInp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .inpWrapper {
+    display: flex;
+    width: 100%;
+    .btnArt {
+      background: var(--secondary);
+      z-index: 3;
+      width: 100%;
+      height: 36px;
+      border-radius: 4px;
+      text-align: left;
+      padding-left: 20px;
+      border: 1px solid var(--border-inp);
+
+      //styleName: Paragraph base/light 14;
+      color: #9c9c9c;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 19.6px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+    .btnArt:hover {
+      cursor: pointer;
+      border: 1px solid var(--border-inp-focus);
+    }
+    svg {
+      position: relative;
+      z-index: 4;
+      transform: translateX(-25px) translateY(5px);
+    }
+    .btnArt:focus {
+      outline: none;
+    }
+  }
+  .artistList {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-36px);
+    border-radius: 4px;
+    max-height: 256px;
+    width: 100%;
+    background: var(--secondary);
+    .artist {
+      width: 100%;
+      height: 36px;
+      min-height: 36px;
+      border: 0;
+      background: var(--secondary);
+      border-radius: 0;
+      color: var(--primary-another);
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: left;
+      padding-left: 20px;
+    }
+    .artist:hover {
+      cursor: pointer;
+      background: var(--list);
+    }
+  }
+}
+.locationInp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .inpWrapper {
+    display: flex;
+    width: 100%;
+    .btnLoc {
+      z-index: 3;
+      background: var(--secondary);
+      width: 100%;
+      height: 36px;
+      border-radius: 4px;
+      text-align: left;
+      padding-left: 20px;
+      border: 1px solid var(--border-inp);
+
+      //styleName: Paragraph base/light 14;
+      color: #9c9c9c;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 19.6px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+    .btnLoc:hover {
+      cursor: pointer;
+      border: 1px solid var(--border-inp-focus);
+    }
+    .btnLoc:focus {
+      outline: none;
+    }
+    svg {
+      z-index: 4;
+      position: relative;
+      transform: translateX(-25px) translateY(5px);
+    }
+  }
+  .locationList {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: column;
+    transform: translateY(-36px);
+    border-radius: 4px;
+    max-height: 256px;
+    width: 100%;
+    background: var(--secondary);
+    .location {
+      width: 100%;
+      height: 36px;
+      min-height: 36px;
+      border: 0;
+      background: var(--secondary);
+      border-radius: 0;
+      color: var(--primary-another);
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: left;
+      padding-left: 20px;
+    }
+    .location:hover {
+      cursor: pointer;
+      background: var(--list);
+    }
+  }
+}
+.yearsInp {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  .inpYear {
+    background: var(--secondary);
+    width: 46px;
+    height: 36px;
+    border-radius: 4px;
+    text-align: left;
+    padding-left: 20px;
+    border: 1px solid var(--border-inp);
+
+    //styleName: Paragraph base/light 14;
+    color: #9c9c9c;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .inpYear:focus {
+    outline: 1px solid var(--border-inp-focus);
+    outline-offset: -2px;
+  }
+}
+.submitBtns {
+  display: flex;
+  .submit {
+    background: 0;
+    border: 0;
+    color: var(--loop);
+    text-decoration: underline;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .clear {
+    background: 0;
+    border: 0;
+    color: #9c9c9c;
+    text-decoration: underline;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .submit:hover {
+    color: var(--primary-another);
+  }
+  .clear:hover {
+    color: var(--loop);
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  width: 100%;
+  justify-content: space-between;
+}

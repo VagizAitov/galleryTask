@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.main {
+  width: 100%;
+  background-color: var(--primary);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+.logoWrapper {
+  display: grid;
+  align-content: center;
+}
+.themeSwitchWrapper {
+  display: grid;
+  justify-content: end;
+}
+.themeSwitch {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+}
+.themeSwitch:hover {
+  cursor: pointer;
+}
+.moon {
+  path {
+    fill: (--primary-another);
+  }
+}
+.sun {
+  path {
+    fill: (--primary-another);
+  }
+}
