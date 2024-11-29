@@ -7,6 +7,7 @@
    ![image](https://github.com/user-attachments/assets/1906adfe-220f-47a9-926c-4c679da49f59)
    Конфиг настроил так, так как у меня не получилось найти, как интегрировать airbnb, prettier в конфиг eslint:
    ![image](https://github.com/user-attachments/assets/5e35e1c1-73d8-45a2-9db4-3a37ed01081c)
-3. В ТЗ написано:
+   Пробелы и точки с запятой соблюдены, т.к. Prettier у меня интегрирован в VSCode
+4. В ТЗ написано:
    ![image](https://github.com/user-attachments/assets/55af1a88-0d0c-4c94-8cc8-60f3d68a1be9)
    Но в фигме не было описано, что мне делать с 1024px шириной, поэтому я верстал по фигме
