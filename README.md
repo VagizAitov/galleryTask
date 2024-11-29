@@ -1,50 +1,12 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Во время выполнения возникло несколько вопросов/недопониманий:
+1. Вычисления на стороне сервера должны выполняться через query params в запросе?(Я сделал так)
+2. То, что я так до конца и не понял: eslint airbnb prettier. Долго добавлял airbnb и prettier, но так до конца и не понял, получилось ли у меня.
+   В начале я получил такую ошибку:
+   ![image](https://github.com/user-attachments/assets/4a38f9e0-979c-404d-ab7c-72c76d4cd300)
+   В интернете поискал, говорят eslint 9 не поддерживает airbnb, но в итоге получилось его установить такми образом:
+   ![image](https://github.com/user-attachments/assets/1906adfe-220f-47a9-926c-4c679da49f59)
+   Конфиг настроил так, так как у меня не получилось найти, как интегрировать airbnb, prettier в конфиг eslint:
+   ![image](https://github.com/user-attachments/assets/5e35e1c1-73d8-45a2-9db4-3a37ed01081c)
+3. В ТЗ написано:
+   ![image](https://github.com/user-attachments/assets/55af1a88-0d0c-4c94-8cc8-60f3d68a1be9)
+   Но в фигме не было описано, что мне делать с 1024px шириной, поэтому я верстал по фигме
