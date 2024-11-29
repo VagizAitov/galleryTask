@@ -6,8 +6,10 @@ export default function Pagination({
   currentPage,
   setPage,
 }: IPropsPagination) {
+  // Создаем массив из всех целых чисел <= общему количеству страниц
   const pagination: any[] = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+  // Режем этот массив и добавляем в него "..." в местахб которые мы должны пропустить
   if (currentPage > 3) {
     pagination.splice(1, currentPage - (currentPage == 6 ? 4 : 3), "...");
   }
@@ -23,6 +25,7 @@ export default function Pagination({
     <div className={classes.wrapper}>
       <ul className={classes.pagination}>
         <li>
+          {/* Стрелка. Меняет текушую страницу на предыдущую, если она не равна 1 */}
           <button
             className={classes.nums}
             onClick={() => {
@@ -45,6 +48,7 @@ export default function Pagination({
             </svg>
           </button>
         </li>
+        {/* Тут будут выводиться все страницы в соответствии с созданным в начале массивом */}
         {pagination == undefined ? (
           <li>Loading...</li>
         ) : (
@@ -68,6 +72,7 @@ export default function Pagination({
           ))
         )}
         <li>
+          {/* Стрелка. Меняет текушую страницу на следующую, если она не равна 1 */}
           <button
             className={classes.nums}
             onClick={() => {

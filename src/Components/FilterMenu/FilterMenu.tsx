@@ -18,6 +18,7 @@ export default function FilterMenu({
   authors,
   locations,
 }: IPropsFilterMenu) {
+  // Объект, в который входят состояния появляющихся элементов (false - закрыто, true - открыто)
   const [states, setStates] = useState<IStates>({
     artistOpen: false,
     locationOpen: false,
@@ -25,12 +26,14 @@ export default function FilterMenu({
     artistsSelectOpen: false,
     locationsSelectOpen: false,
   });
+  // Объект, в который входят все данные, по которым происходит фильтрация
   const [data, setData] = useState<IData>({
     yearFrom: "",
     yearTo: "",
     location: "",
     artist: "",
   });
+  // Функция, которая меняет состояния данных для поиска. В App.tsx вызывается refetch()
   const submit = () => {
     setArtist(data.artist);
     setLocation(data.location);
@@ -38,11 +41,14 @@ export default function FilterMenu({
     setYearTo(data.yearTo);
     setDisp(false);
   };
+  // Состояния для локального поиска внутри списка авторов
   const [artistSearch, setArtistSearch] = useState<string>("");
+  // ... внутри списка локаций
   const [locationSearch, setLocationSearch] = useState<string>("");
   return (
     <div
       onClick={(e: any) => {
+        // Проверка. Если нажал на элемент с классом classes.disp, то окно закроется
         if (e.target.className == classes.disp) {
           setDisp(false);
         }
@@ -61,6 +67,7 @@ export default function FilterMenu({
           style={{ padding: `${isLittle ? "40px" : "70px"}` }}
         >
           <div className={classes.esc}>
+            {/* Кнопка выхода из меню */}
             <button onClick={() => setDisp(false)}>
               <svg
                 width="20"
@@ -80,6 +87,7 @@ export default function FilterMenu({
           </div>
 
           <div className={classes.filter}>
+            {/* При нажатии на этот div содержимое Artist будет открываться/закрываться */}
             <div
               className={classes.open}
               onClick={() =>
@@ -120,6 +128,7 @@ export default function FilterMenu({
               className={classes.artistInp}
             >
               <div className={classes.inpWrapper}>
+                {/* При нажатии на этот input будет открываться/закрываться список Авторов */}
                 <input
                   placeholder="Select the artist"
                   onChange={(e) => setArtistSearch(e.target.value)}
@@ -162,6 +171,7 @@ export default function FilterMenu({
                   </svg>
                 </div>
               </div>
+              {/* Список авторов */}
               <div
                 className={classes.artistList}
                 style={states.artistsSelectOpen ? {} : { display: "none" }}
@@ -199,6 +209,7 @@ export default function FilterMenu({
                 )}
               </div>
             </div>
+            {/* При нажатии на этот div будет открываться/закрываться содержимое Location */}
             <div
               className={classes.open}
               onClick={() =>
@@ -238,6 +249,7 @@ export default function FilterMenu({
               className={classes.locationInp}
             >
               <div className={classes.inpWrapper}>
+                {/* При нажатии на этот input будет открываться/закрываться список Локаций */}
                 <input
                   placeholder="Select the location"
                   onChange={(e) => setLocationSearch(e.target.value)}
@@ -272,6 +284,7 @@ export default function FilterMenu({
                   </svg>
                 </div>
               </div>
+              {/* Список локаций */}
               <div
                 className={classes.locationList}
                 style={states.locationsSelectOpen ? {} : { display: "none" }}
@@ -308,7 +321,7 @@ export default function FilterMenu({
                 )}
               </div>
             </div>
-
+            {/* При нажатии на div открывается/закрывается содержимое Years */}
             <div
               className={classes.open}
               onClick={() =>
@@ -380,13 +393,17 @@ export default function FilterMenu({
               />
             </div>
           </div>
+          {/* Тут находятся кнопки SHOW THE RESULT и CLEAR */}
           <div className={classes.submitBtns}>
+            {/* Кнопка, которая вызывает submit, а также закрывает меню */}
             <button onClick={submit} className={classes.submit}>
               SHOW THE RESULTS
             </button>
+            {/* Кнопка, которая сбрасывает все фильтры, кроме поиска по строке, а также закрывает меню */}
             <button
               className={classes.clear}
               onClick={() => {
+                // Обновляем данные, запускаем refetch()
                 setData({ artist: "", location: "", yearFrom: "", yearTo: "" });
                 setArtist("");
                 setLocation("");

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
+// Получаем всех авторов
+
 async function getData() {
   return axios.get(`https://test-front.framework.team/authors`);
 }

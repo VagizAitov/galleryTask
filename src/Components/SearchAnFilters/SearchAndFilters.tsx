@@ -7,8 +7,11 @@ export default function SearchAndFilters({
   setSearchParams,
   setDisp,
 }: IPropsSearchAndFilters) {
+  // Ввожу state, он понадобится мне, когда нужно будет удалить весь текст из input нажатием на крестик
   const [inpValue, setInpValue] = useState<string>("");
+  // Вызывается при нажатии кнопки, когда input в фокусе
   const refetch = (e: any) => {
+    // Если происходит нажатие Enter, то мы меняем состояние searchParams, что приведет к refetch() в App.tsx
     if (e.key == "Enter") {
       setSearchParams(e.target.value);
     }
@@ -18,6 +21,7 @@ export default function SearchAndFilters({
       className={classes.wrapper}
       style={{ padding: `0 ${typeOfScreen == 3 ? "100px" : "20px"}` }}
     >
+      {/* input с поиском*/}
       <input
         placeholder="Painting title"
         className={classes.input}
@@ -48,6 +52,7 @@ export default function SearchAndFilters({
           fill="#575757"
         />
       </svg>
+      {/* Крестик появляется в том случае, если input value != "" | При нажатии на него input value становится "" */}
       <svg
         width="12"
         height="12"
@@ -66,6 +71,8 @@ export default function SearchAndFilters({
           fill="#575757"
         />
       </svg>
+
+      {/* Кнопка, при нажатии на которую справа выезжает меню фильтрации */}
 
       <button onClick={() => setDisp(true)} className={classes.button}>
         <svg

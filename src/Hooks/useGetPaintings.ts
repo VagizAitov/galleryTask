@@ -11,6 +11,8 @@ async function getData(
   location: string
 ) {
   return axios.get(
+    // Проверяем параметры фильтрации: если равны "", то возвращаем "", т.к. если бы мы вернули "locationId="(для примера), то нам бы вернулся пустой массив,
+    // ...иначе возвращаем "&locationId=${locationId}"
     `https://test-front.framework.team/paintings?q=${params}&_limit=${limit}&_page=${page}${yearFrom == "" ? "" : `&created_gte=${yearFrom}`}${yearTo == "" ? "" : `&created_lte=${yearTo}`}${
       author == "" ? "" : `&authorId=${author}`
     }${location == "" ? "" : `&locationId=${location}`}`
@@ -29,6 +31,8 @@ export default function useGetPaintings(
   const paintings = useQuery({
     queryKey: ["paintings", page],
     queryFn: () =>
+      // page - текущая страница | limit - количество картин на странице | params - поиск картины по строке | yearFrom - начиная с какого года искать картины |
+      // yearTo - до какого года искать картины | author - id автора | location - id локации
       getData(page, limit, params, yearFrom, yearTo, author, location),
   });
 

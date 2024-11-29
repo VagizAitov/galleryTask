@@ -11,6 +11,7 @@ export default function Card({
 }: IProps) {
   return (
     <div className={classes.wrapper}>
+      {/* Создаю картинку, задаю ей пропорции */}
       <img
         style={{
           overflow: "hidden",
@@ -18,12 +19,13 @@ export default function Card({
             typeOfScreen == 1
               ? `280/185`
               : typeOfScreen == 2
-              ? `352/220`
-              : `392/260`
+                ? `352/220`
+                : `392/260`
           }`,
         }}
         src={`https://test-front.framework.team${url}`}
       />
+      {/* Здесь отображается вся информация о картине(автор, локация, год, название) */}
       <div
         className={classes.infoBox}
         style={{
@@ -41,6 +43,7 @@ export default function Card({
             }`,
           }}
         >
+          {/* Название картины(отображено изначально) */}
           <p
             className={classes.name}
             style={{
@@ -48,15 +51,16 @@ export default function Card({
                 typeOfScreen == 1
                   ? "calc(3vw + 4px)"
                   : typeOfScreen == 2
-                  ? "calc(3vw / 2 + 4px)"
-                  : "calc(3vw / 3 + 4px)"
+                    ? "calc(3vw / 2 + 4px)"
+                    : "calc(3vw / 3 + 4px)"
               }`,
               height: "33.33%",
               lineHeight: `${typeOfScreen == 1 ? "14.53px" : "19.38px"}`,
             }}
           >
             {name.toUpperCase()}
-          </p>{" "}
+          </p>
+          {/* Автор картины(не отображено изначально) */}
           <p
             className={classes.namePainter}
             style={{
@@ -66,8 +70,8 @@ export default function Card({
                 typeOfScreen == 1
                   ? "calc(3vw + 4px)"
                   : typeOfScreen == 2
-                  ? "calc(3vw / 2 + 4px)"
-                  : "calc(3vw / 3 + 4px)"
+                    ? "calc(3vw / 2 + 4px)"
+                    : "calc(3vw / 3 + 4px)"
               }`,
               height: "33.33%",
               lineHeight: `${typeOfScreen == 1 ? "14.53px" : "19.38px"}`,
@@ -75,6 +79,7 @@ export default function Card({
           >
             {author.toUpperCase()}
           </p>
+          {/* Год создания картины(отображено изначально) */}
           <p
             className={classes.year}
             style={{
@@ -83,8 +88,8 @@ export default function Card({
                 typeOfScreen == 1
                   ? "3vw"
                   : typeOfScreen == 2
-                  ? "calc(3vw / 2)"
-                  : "calc(3vw / 3)"
+                    ? "calc(3vw / 2)"
+                    : "calc(3vw / 3)"
               }`,
               height: "22.22%",
               lineHeight: `${typeOfScreen == 1 ? "9.68px" : "14.52px"}`,
@@ -92,6 +97,7 @@ export default function Card({
           >
             {created.toUpperCase()}
           </p>
+          {/* локация картины(отображено изначально) */}
           <p
             className={classes.location}
             style={{
@@ -102,8 +108,8 @@ export default function Card({
                 typeOfScreen == 1
                   ? "3vw"
                   : typeOfScreen == 2
-                  ? "calc(3vw / 2)"
-                  : "calc(3vw / 3)"
+                    ? "calc(3vw / 2)"
+                    : "calc(3vw / 3)"
               }`,
               height: "22.22%",
               lineHeight: `${typeOfScreen == 1 ? "9.68px" : "14.52px"}`,
